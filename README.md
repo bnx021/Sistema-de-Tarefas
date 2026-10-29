@@ -1,5 +1,10 @@
 # Sistema de Gestão de Tarefas
 
+## Participantes
+
+- Brenno César G. dos Santos
+- Gabriel Leal da Silva
+
 Projeto didático de uma aplicação Django para cadastro e consulta de tarefas persistidas em SQLite.
 
 ## Requisitos
