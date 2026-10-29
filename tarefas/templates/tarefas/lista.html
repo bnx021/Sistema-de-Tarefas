@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de tarefas</title>
+</head>
+<body>
+    <main>
+        <h1>Lista de tarefas</h1>
+        {% if tarefas %}
+        <ul>
+            {% for tarefa in tarefas %}
+            <li>
+                <strong>{{ tarefa.titulo }}</strong> —
+                categoria: {{ tarefa.categoria.nome }} —
+                prioridade: {{ tarefa.get_prioridade_display }} —
+                situação: {{ tarefa.get_situacao_display }} —
+                data prevista: {{ tarefa.data_prevista|date:"d/m/Y" }}
+                {% if tarefa.descricao %}
+                    <br>{{ tarefa.descricao }}
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Nenhuma tarefa cadastrada até o momento.</p>
+        {% endif %}
+        <a href="{% url 'inicio' %}">Voltar ao início</a>
+    </main>
+</body>
+</html>
